@@ -1,6 +1,6 @@
 chrome.runtime.onInstalled.addListener((details) => {
   if (details.reason === 'install') {
-    chrome.tabs.create({ url: 'vscode:extension/im-anishraj.inspectai-ide-companion' });
+    chrome.tabs.create({ url: 'https://marketplace.visualstudio.com/items?itemName=im-anishraj.inspectai-ide-companion' });
   }
 });
 

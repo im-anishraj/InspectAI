@@ -206,7 +206,46 @@ function handleClick(e: MouseEvent) {
   if (source) {
     createPromptUI(e.clientX, e.clientY, source.fileName, source.lineNumber, target.outerHTML);
   } else {
-    console.warn('[InspectAI] No React source found for clicked element.');
+    // Show a visual warning for Server Components instead of failing silently
+    console.warn('[InspectAI] No React source found. Likely a Server Component.');
+    
+    if (currentPromptUI) currentPromptUI.remove();
+    
+    const container = document.createElement('div');
+    container.style.position = 'fixed';
+    container.style.top = `${Math.min(e.clientY, window.innerHeight - 100)}px`;
+    container.style.left = `${Math.min(e.clientX, window.innerWidth - 300)}px`;
+    container.style.zIndex = '999999';
+    const shadow = container.attachShadow({ mode: 'open' });
+    
+    const wrapper = document.createElement('div');
+    wrapper.style.backgroundColor = '#1e1e1e';
+    wrapper.style.color = '#fff';
+    wrapper.style.padding = '12px';
+    wrapper.style.borderRadius = '8px';
+    wrapper.style.border = '1px solid #ef4444';
+    wrapper.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
+    wrapper.style.fontFamily = 'system-ui, sans-serif';
+    wrapper.style.width = '280px';
+    
+    wrapper.innerHTML = `
+      <div style="color: #ef4444; font-weight: bold; margin-bottom: 8px;">⚠️ Server Component Detected</div>
+      <div style="font-size: 12px; color: #ccc;">
+        Next.js Server Components do not expose file paths to the browser.<br/><br/>
+        Try adding <code>"use client";</code> to the top of your file, or click a Client Component.
+      </div>
+    `;
+    
+    shadow.appendChild(wrapper);
+    document.body.appendChild(container);
+    currentPromptUI = container;
+    
+    setTimeout(() => {
+      if (currentPromptUI === container) {
+        container.remove();
+        currentPromptUI = null;
+      }
+    }, 4000);
   }
 }
 

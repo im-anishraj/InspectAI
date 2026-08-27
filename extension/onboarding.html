@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to InspectAI</title>
+  <style>
+    body { 
+      font-family: system-ui, -apple-system, sans-serif; 
+      background: #1e1e1e; 
+      color: white; 
+      text-align: center; 
+      padding: 10vh 20px; 
+      margin: 0;
+    }
+    .container { 
+      max-width: 550px; 
+      margin: 0 auto; 
+      background: #252526; 
+      padding: 40px; 
+      border-radius: 12px; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border: 1px solid #333;
+    }
+    h1 { color: #a855f7; margin-top: 0;}
+    p { font-size: 16px; line-height: 1.5; color: #cccccc; }
+    .highlight { color: #fff; font-weight: bold; }
+    button { 
+      background: #0ea5e9; 
+      color: white; 
+      border: none; 
+      padding: 14px 28px; 
+      font-size: 16px; 
+      font-weight: bold;
+      border-radius: 6px; 
+      cursor: pointer; 
+      margin-top: 25px; 
+      transition: background 0.2s;
+    }
+    button:hover { background: #0284c7; }
+    .warning {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #888;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to InspectAI! 🚀</h1>
+    <p>You have successfully installed the browser extension.</p>
+    
+    <p>To allow InspectAI to securely send your prompts to your editor, you need to install the <span class="highlight">VS Code Companion Extension</span>.</p>
+    
+    <button id="installBtn">Open VS Code to Install</button>
+
+    <p class="warning">Note: When you click this button, your browser will show a security pop-up asking if you want to open VS Code. This is completely safe and expected!</p>
+  </div>
+  <script src="onboarding.js"></script>
+</body>
+</html>

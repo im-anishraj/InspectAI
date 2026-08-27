@@ -10,6 +10,11 @@
   "host_permissions": [
     "http://localhost/*"
   ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
   "background": {
     "service_worker": "dist/background.js"
   },
@@ -20,6 +25,11 @@
     }
   ],
   "action": {
-    "default_title": "InspectAI"
+    "default_title": "InspectAI",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
   }
 }

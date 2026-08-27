@@ -1,4 +1,5 @@
 <div align="center">
+  <img src="inspectai.png" alt="InspectAI Logo" width="128" height="128" style="border-radius: 20%;" />
   <h1>🔍 InspectAI</h1>
   <p><b>The AI-powered Inspect Element for Modern Web Development.</b></p>
   <p>Point, Click, and Prompt. Watch your IDE automatically write the code.</p>

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "InspectAI",
-  "version": "1.0.0",
-  "description": "The AI-powered Inspect Element for React/Next.js",
+  "version": "1.0.1",
+  "description": "Design every corner of your website by vibe coding. Point, click, and prompt.",
   "permissions": [
     "activeTab",
     "scripting"

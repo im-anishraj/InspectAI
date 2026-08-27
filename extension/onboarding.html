@@ -65,17 +65,38 @@
       border: 1px solid rgba(255,255,255,0.1);
     }
 
-    h1 {
-      font-size: 26px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
+    .badge {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.1);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
-    p {
-      color: var(--text-muted);
-      font-size: 15px;
-      margin-bottom: 24px;
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .highlight-text {
+      background: linear-gradient(135deg, #3b82f6, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      color: #a3a3a3;
+      font-size: 16px;
+      margin-bottom: 32px;
     }
 
     .step-box {
@@ -135,18 +156,22 @@
   <div class="card">
     <img src="icon.png" alt="InspectAI Logo" class="logo">
     
-    <h1>Welcome to InspectAI</h1>
-    <p>You've successfully installed the browser extension. Let's get your IDE connected.</p>
+    <div>
+      <span class="badge">Installation Successful</span>
+    </div>
+
+    <h1>Design every corner of your website by <span class="highlight-text">vibe coding</span>.</h1>
+    <p class="subtitle">InspectAI visually bridges your browser directly to your IDE. Just point, click, and tell your AI what to build.</p>
     
     <div class="step-box">
-      <p><strong>Final Step:</strong> To allow InspectAI to securely send prompts directly to your editor, you must install the official VS Code Companion Extension.</p>
+      <p><strong>Final Step:</strong> To unlock this magic, we need to connect to your editor. Install the official VS Code Companion Extension.</p>
     </div>
     
     <button id="installBtn" class="btn">Connect to VS Code</button>
 
     <p class="footer-note">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-      Your browser will show a security prompt asking to open Visual Studio Code. This is standard behavior.
+      Your browser will ask to open Visual Studio Code. This is standard behavior.
     </p>
   </div>
   <script src="onboarding.js"></script>

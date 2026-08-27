@@ -1,8 +1,8 @@
 <div align="center">
   <img src="inspectai.png" alt="InspectAI Logo" width="128" height="128" style="border-radius: 20%;" />
   <h1>🔍 InspectAI</h1>
-  <p><b>The AI-powered Inspect Element for Modern Web Development.</b></p>
-  <p>Point, Click, and Prompt. Watch your IDE automatically write the code.</p>
+  <p><b>Design every corner of your website by vibe coding.</b></p>
+  <p>Visually bridge your browser to your IDE. Just point, click, and tell your AI what to build.</p>
   
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)

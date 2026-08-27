@@ -1,11 +1,12 @@
 <div align="center">
   <img src="inspectai.png" alt="InspectAI Logo" width="128" height="128" style="border-radius: 20%;" />
   <h1>🔍 InspectAI</h1>
-  <p><b>The AI-powered Inspect Element for Modern Web Development.</b></p>
-  <p>Point, Click, and Prompt. Watch your IDE automatically write the code.</p>
+  <p><b>Design every corner of your website by vibe coding.</b></p>
+  <p>Visually bridge your browser to your IDE. Just point, click, and tell your AI what to build.</p>
   
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+  [![VS Code Marketplace](https://img.shields.io/badge/VS%20Code-Marketplace-blue?logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=im-anishraj.inspectai-ide-companion)
 </div>
 
 <br/>
@@ -34,9 +35,10 @@ You get the safety of reviewing the diff in your editor, powered by the AI subsc
 3. Click **Load unpacked** and select the `/extension/dist` directory.
 
 ### 2. Install the VS Code Companion
-1. Open the `/ide-extension` folder in VS Code.
-2. Run `npm install` and `npm run compile`.
-3. Press `F5` to start the Extension Development Host (which opens a new VS Code window with the bridge running).
+Install the official companion extension directly from the VS Code Marketplace:
+**[?? Download InspectAI IDE Companion](https://marketplace.visualstudio.com/items?itemName=im-anishraj.inspectai-ide-companion)**
+
+*(Alternatively, to run from source: open `/ide-extension` in VS Code, run `npm install`, and press `F5`)*
 
 ### 3. Magic Time
 1. Open any local Next.js/React app (`npm run dev`).

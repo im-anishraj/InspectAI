@@ -29,9 +29,11 @@ function createHighlightBox() {
   box.style.position = 'fixed';
   box.style.pointerEvents = 'none';
   box.style.zIndex = '999998';
-  box.style.border = '2px solid #8a2be2';
-  box.style.backgroundColor = 'rgba(138, 43, 226, 0.2)';
-  box.style.transition = 'all 0.1s ease-out';
+  box.style.border = '2px dashed #a855f7';
+  box.style.backgroundColor = 'transparent';
+  box.style.borderRadius = '4px';
+  box.style.boxShadow = '0 0 0 1px rgba(0,0,0,0.1)';
+  box.style.transition = 'all 0.08s ease-out';
   box.style.display = 'none';
   document.body.appendChild(box);
   return box;

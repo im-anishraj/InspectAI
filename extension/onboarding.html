@@ -1,59 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to InspectAI</title>
   <style>
-    body { 
-      font-family: system-ui, -apple-system, sans-serif; 
-      background: #1e1e1e; 
-      color: white; 
-      text-align: center; 
-      padding: 10vh 20px; 
+    :root {
+      --bg: #000000;
+      --card-bg: #111111;
+      --border: #222222;
+      --text: #ededed;
+      --text-muted: #888888;
+      --primary: #3b82f6;
+    }
+    
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
     }
-    .container { 
-      max-width: 550px; 
-      margin: 0 auto; 
-      background: #252526; 
-      padding: 40px; 
-      border-radius: 12px; 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      border: 1px solid #333;
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      background-image: radial-gradient(circle at 50% -20%, #3b82f622 0%, transparent 40%);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      line-height: 1.6;
     }
-    h1 { color: #a855f7; margin-top: 0;}
-    p { font-size: 16px; line-height: 1.5; color: #cccccc; }
-    .highlight { color: #fff; font-weight: bold; }
-    button { 
-      background: #0ea5e9; 
-      color: white; 
-      border: none; 
-      padding: 14px 28px; 
-      font-size: 16px; 
-      font-weight: bold;
-      border-radius: 6px; 
-      cursor: pointer; 
-      margin-top: 25px; 
-      transition: background 0.2s;
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
     }
-    button:hover { background: #0284c7; }
-    .warning {
-      margin-top: 20px;
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      opacity: 0.5;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      margin-bottom: 24px;
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
+    .step-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+
+    .step-box p {
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .step-box strong {
+      color: #fff;
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      background-color: var(--text);
+      color: var(--bg);
+      border: none;
+      border-radius: 8px;
+      padding: 14px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-note {
+      margin-top: 24px;
       font-size: 13px;
-      color: #888;
-      font-style: italic;
+      color: #555;
+      margin-bottom: 0;
+    }
+
+    .footer-note svg {
+      vertical-align: middle;
+      margin-right: 6px;
+      margin-bottom: 2px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome to InspectAI! 🚀</h1>
-    <p>You have successfully installed the browser extension.</p>
+  <div class="card">
+    <img src="icon.png" alt="InspectAI Logo" class="logo">
     
-    <p>To allow InspectAI to securely send your prompts to your editor, you need to install the <span class="highlight">VS Code Companion Extension</span>.</p>
+    <h1>Welcome to InspectAI</h1>
+    <p>You've successfully installed the browser extension. Let's get your IDE connected.</p>
     
-    <button id="installBtn">Open VS Code to Install</button>
+    <div class="step-box">
+      <p><strong>Final Step:</strong> To allow InspectAI to securely send prompts directly to your editor, you must install the official VS Code Companion Extension.</p>
+    </div>
+    
+    <button id="installBtn" class="btn">Connect to VS Code</button>
 
-    <p class="warning">Note: When you click this button, your browser will show a security pop-up asking if you want to open VS Code. This is completely safe and expected!</p>
+    <p class="footer-note">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+      Your browser will show a security prompt asking to open Visual Studio Code. This is standard behavior.
+    </p>
   </div>
   <script src="onboarding.js"></script>
 </body>

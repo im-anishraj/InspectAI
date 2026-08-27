@@ -4,16 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to InspectAI</title>
+  <!-- Using a fun, geometric font to match the neo-brutalist style -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #000000;
-      --card-bg: #111111;
-      --border: #222222;
-      --text: #ededed;
-      --text-muted: #888888;
-      --primary: #3b82f6;
+      --bg-color: #ffd84d; /* Bright retro yellow */
+      --card-bg: #fffdf5; /* Off-white */
+      --border-color: #111;
+      --blue: #4ecdc4;
+      --red: #ff6b6b;
+      --purple: #a855f7;
     }
-    
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -21,134 +23,148 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg);
-      background-image: radial-gradient(circle at 50% -20%, #3b82f622 0%, transparent 40%);
-      color: var(--text);
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      background-color: var(--bg-color);
+      /* Funky geometric background shapes */
+      background-image: 
+        radial-gradient(circle at 15% 20%, var(--purple) 0%, var(--purple) 15%, transparent 15.1%),
+        radial-gradient(circle at 85% 80%, var(--red) 0%, var(--red) 12%, transparent 12.1%),
+        linear-gradient(45deg, transparent 48%, var(--border-color) 48%, var(--border-color) 52%, transparent 52%);
+      background-size: 100vw 100vh, 100vw 100vh, 40px 40px;
+      color: var(--border-color);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      line-height: 1.6;
+      padding: 40px 20px;
     }
 
     .card {
       background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 48px 40px;
-      max-width: 480px;
-      width: 90%;
+      border: 4px solid var(--border-color);
+      /* Hard offset brutalist shadow */
+      box-shadow: 16px 16px 0px var(--border-color);
+      padding: 40px 50px;
+      max-width: 650px;
+      width: 100%;
       text-align: center;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
       position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--primary), transparent);
-      opacity: 0.5;
     }
 
     .logo {
-      width: 80px;
-      height: 80px;
-      border-radius: 18px;
-      margin-bottom: 24px;
-      box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
-      border: 1px solid rgba(255,255,255,0.1);
+      width: 64px;
+      height: 64px;
+      border: 3px solid var(--border-color);
+      box-shadow: 4px 4px 0px var(--border-color);
+      border-radius: 8px;
+      margin-bottom: 20px;
+      background: white;
     }
 
-    .badge {
-      display: inline-block;
-      background: rgba(59, 130, 246, 0.1);
-      color: #60a5fa;
-      border: 1px solid rgba(59, 130, 246, 0.2);
-      padding: 4px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 24px;
-      letter-spacing: 0.05em;
+    .thanks-text {
+      font-size: 14px;
+      font-weight: 800;
       text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 46px;
       font-weight: 800;
-      margin-bottom: 16px;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-    }
-
-    .highlight-text {
-      background: linear-gradient(135deg, #3b82f6, #a855f7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    p.subtitle {
-      color: #a3a3a3;
-      font-size: 16px;
-      margin-bottom: 32px;
-    }
-
-    .step-box {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 32px;
-      text-align: left;
-    }
-
-    .step-box p {
-      margin-bottom: 0;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .step-box strong {
-      color: #fff;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      letter-spacing: -2px;
     }
 
     .btn {
       display: inline-block;
-      width: 100%;
-      background-color: var(--text);
-      color: var(--bg);
-      border: none;
-      border-radius: 8px;
-      padding: 14px 24px;
-      font-size: 16px;
-      font-weight: 600;
+      background-color: var(--blue);
+      color: var(--border-color);
+      border: 4px solid var(--border-color);
+      box-shadow: 8px 8px 0px var(--border-color);
+      padding: 16px 32px;
+      font-size: 22px;
+      font-weight: 800;
+      text-transform: uppercase;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.1s ease;
+      margin-bottom: 12px;
+      width: 100%;
     }
 
     .btn:hover {
-      background-color: #ffffff;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+      transform: translate(2px, 2px);
+      box-shadow: 6px 6px 0px var(--border-color);
+      background-color: #3cb8b0;
+    }
+    
+    .btn:active {
+      transform: translate(8px, 8px);
+      box-shadow: 0px 0px 0px var(--border-color);
     }
 
-    .footer-note {
-      margin-top: 24px;
+    .warning {
       font-size: 13px;
-      color: #555;
-      margin-bottom: 0;
+      font-weight: 700;
+      margin-bottom: 40px;
+      opacity: 0.7;
     }
 
-    .footer-note svg {
-      vertical-align: middle;
-      margin-right: 6px;
-      margin-bottom: 2px;
+    .how-it-works {
+      border-top: 4px solid var(--border-color);
+      padding-top: 30px;
+      text-align: left;
+    }
+
+    .how-it-works h2 {
+      font-size: 28px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #fff;
+      border: 3px solid var(--border-color);
+      padding: 15px 20px;
+      box-shadow: 4px 4px 0px var(--border-color);
+    }
+
+    .step-num {
+      background: var(--red);
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 800;
+      border: 3px solid var(--border-color);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Change colors for different steps */
+    .step:nth-child(2) .step-num { background: var(--purple); }
+    .step:nth-child(3) .step-num { background: var(--blue); }
+    
+    .step-text {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
     }
   </style>
 </head>
@@ -156,23 +172,30 @@
   <div class="card">
     <img src="icon.png" alt="InspectAI Logo" class="logo">
     
-    <div>
-      <span class="badge">Installation Successful</span>
-    </div>
-
-    <h1>Design every corner of your website by <span class="highlight-text">vibe coding</span>.</h1>
-    <p class="subtitle">InspectAI visually bridges your browser directly to your IDE. Just point, click, and tell your AI what to build.</p>
+    <div class="thanks-text">Thanks for installing InspectAI <3</div>
     
-    <div class="step-box">
-      <p><strong>Final Step:</strong> To unlock this magic, we need to connect to your editor. Install the official VS Code Companion Extension.</p>
-    </div>
+    <h1>Connect Your IDE To Start Vibe Coding</h1>
     
-    <button id="installBtn" class="btn">Connect to VS Code</button>
+    <button id="installBtn" class="btn">Connect VS Code &rarr;</button>
+    <div class="warning">Your browser will ask to open Visual Studio Code. This is completely normal.</div>
 
-    <p class="footer-note">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-      Your browser will ask to open Visual Studio Code. This is standard behavior.
-    </p>
+    <div class="how-it-works">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">Connect VS Code using the big button above and ensure your local app is running (e.g. Next.js).</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">Click the InspectAI extension icon in your Chrome toolbar.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">Point and click any element on your website, type a prompt, and watch your IDE write the code!</div>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="onboarding.js"></script>
 </body>

@@ -1,18 +1,30 @@
 {
   "name": "inspectai-ide-companion",
   "displayName": "InspectAI IDE Companion",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "im-anishraj",
   "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "keywords": [
+    "AI",
+    "React",
+    "Next.js",
+    "Copilot",
+    "Inspector"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/im-anishraj/InspectAI.git"
   },
-  "description": "Bridges the InspectAI Chrome Extension to the IDE Agent",
+  "description": "Bridges the InspectAI Chrome Extension to your IDE Agent. Click DOM elements and prompt your AI seamlessly.",
   "engines": {
     "vscode": "^1.80.0"
   },
   "categories": [
+    "Machine Learning",
     "Other"
   ],
   "activationEvents": [
